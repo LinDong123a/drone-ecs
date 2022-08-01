@@ -152,7 +152,9 @@ func (p *Plugin) Exec() error {
 	}
 	volumes := []*ecs.Volume{}
 
-	for _, command := range p.Command {
+	for _, v := range p.Command {
+		var command string
+		command = v
 		definition.Command = append(definition.Command, &command)
 	}
 
