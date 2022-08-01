@@ -100,7 +100,7 @@ func main() {
 			Usage:  "A list of command to start cotainer",
 			EnvVar: "PLUGIN_COMMAND",
 		},
-		cli.StringSliceFlag{
+		cli.StringFlag{
 			Name:   "working-directory",
 			Usage:  "working directory while starting cotainer",
 			EnvVar: "PLUGIN_WORKING_DIRECTORY",

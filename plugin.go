@@ -124,8 +124,6 @@ func (p *Plugin) Exec() error {
 		}
 	}
 
-	fmt.Println("Specified working directory" + p.WorkingDirectory)
-
 	definition := ecs.ContainerDefinition{
 		Command: []*string{},
 
