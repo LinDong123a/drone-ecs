@@ -96,6 +96,16 @@ func main() {
 			EnvVar: "PLUGIN_LABELS",
 		},
 		cli.StringSliceFlag{
+			Name:   "command",
+			Usage:  "A list of command to start cotainer",
+			EnvVar: "PLUGIN_COMMAND",
+		},
+		cli.StringSliceFlag{
+			Name:   "working-directory",
+			Usage:  "working directory while starting cotainer",
+			EnvVar: "PLUGIN_WORKING_DIRECTORY",
+		},
+		cli.StringSliceFlag{
 			Name:   "entry-point",
 			Usage:  "A list of values to build the container entry point argument",
 			EnvVar: "PLUGIN_ENTRY_POINT",
@@ -272,6 +282,8 @@ func run(c *cli.Context) error {
 		SecretEnvironment:            c.StringSlice("secret-environment-variables"),
 		SecretsManagerEnvironment:    c.StringSlice("secrets-manager-variables"),
 		EntryPoint:                   c.StringSlice("entry-point"),
+		Command:                      c.StringSlice("command"),
+		WorkingDirectory:             c.String("working-directory"),
 		Labels:                       c.StringSlice("labels"),
 		CPU:                          c.Int64("cpu"),
 		Memory:                       c.Int64("memory"),
